@@ -1,0 +1,46 @@
+.banner {
+    text-align: center;
+    padding: 50px;
+    background-color: transparent;
+  }
+  
+  .muichiro {
+    font-family: 'Times New Roman', Times, serif;
+    text-align:start;
+    white-space: nowrap;
+    color: transparent;
+    animation: typing 1s steps(20, end), blink-caret 0.5s step-end infinite;
+    color: white;
+    
+  }
+
+
+  .tokito{
+    max-width: 450px;
+    margin-top: 20px;
+    text-align:start;
+    white-space: normal;
+    overflow: hidden;
+  }
+
+ 
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+   100%{
+      border-color: transparent;
+    }
+  }
+
