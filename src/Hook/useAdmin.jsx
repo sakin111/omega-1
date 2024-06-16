@@ -12,6 +12,7 @@ const useAdmin = () => {
                 const res = await axiosSecure.get(`users/admin/${user?.email}`);
                 return res.data?.admin;
             } catch (error) {
+                
                 console.error("Error fetching admin status:", error);
                 return false;
             }

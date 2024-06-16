@@ -18,8 +18,8 @@ const Rooms = () => {
 
 
 
-  
-   
+
+
 
     const { data: rooms = [], isLoading, error } = useQuery({
         queryKey: ['rooms'],
@@ -38,16 +38,16 @@ const Rooms = () => {
 
     const handleChange = (event, newAlignment) => {
         setAlignment(newAlignment);
-      };
+    };
 
-// this is for show all the card
+    // this is for show all the card
 
     useEffect(() => {
-        setFilteredRooms(rooms); 
+        setFilteredRooms(rooms);
     }, [rooms]);
 
-// this for filter the card 
-  
+    // this for filter the card 
+
     const filterRoomsByCategory = (category) => {
 
         if (category) {
@@ -58,9 +58,9 @@ const Rooms = () => {
         }
     };
 
-// this for search the card 
+    // this for search the card 
 
-    const handleSearch = async(e) => {
+    const handleSearch = async (e) => {
         setSearchTerm(e.target.value);
         const filtered = await rooms.filter(room =>
             room.hotelName.toLowerCase().includes(e.target.value.toLowerCase()) ||
@@ -70,7 +70,36 @@ const Rooms = () => {
     };
 
 
-    if (isLoading) return <div>Loading...</div>;
+
+    if (isLoading) return <div className="h-screen bg-white w-full flex justify-around items-start p-9 ">
+        <div className="flex flex-col gap-4 w-64">
+            <div className="skeleton h-32 w-full"></div>
+            <div className="skeleton h-4 w-28"></div>
+            <div className="skeleton h-4 w-full"></div>
+            <div className="skeleton h-4 w-full"></div>
+        </div>
+        <div className="flex flex-col gap-4 w-64">
+            <div className="skeleton h-32 w-full"></div>
+            <div className="skeleton h-4 w-28"></div>
+            <div className="skeleton h-4 w-full"></div>
+            <div className="skeleton h-4 w-full"></div>
+        </div>
+        <div className="flex flex-col gap-4 w-64">
+            <div className="skeleton h-32 w-full"></div>
+            <div className="skeleton h-4 w-28"></div>
+            <div className="skeleton h-4 w-full"></div>
+            <div className="skeleton h-4 w-full"></div>
+        </div>
+        <div className="flex flex-col gap-4 w-64">
+            <div className="skeleton h-32 w-full"></div>
+            <div className="skeleton h-4 w-28"></div>
+            <div className="skeleton h-4 w-full"></div>
+            <div className="skeleton h-4 w-full"></div>
+        </div>
+      
+    </div>
+    
+    // for error
     if (error) return <div>Error: {error.message}</div>;
 
 
@@ -101,34 +130,34 @@ const Rooms = () => {
                 >
                     <ToggleButton value="five star" onClick={() => filterRoomsByCategory('five star')}>Five Star</ToggleButton>
                     <ToggleButton value="three star" onClick={() => filterRoomsByCategory('three star')}>Three Star</ToggleButton>
-                    <ToggleButton value="normal"  onClick={() => filterRoomsByCategory('normal')}>Normal</ToggleButton>
+                    <ToggleButton value="normal" onClick={() => filterRoomsByCategory('normal')}>Normal</ToggleButton>
                 </ToggleButtonGroup>
 
-                
-               </div> 
-                <div className="grid grid-cols-4 max-w-6xl gap-12 py-10 mx-auto  bg-white">
-                    {filteredRooms.map((room, idx) => (
-                        <div className="card card-compact w-72 h-96 bg-base-100 shadow-xl rounded-md" key={idx}>
-                            <figure><img src={room.imageUrl} alt="Shoes" /></figure>
-                            <div className="card-body">
-                                <h2 className="text-xl font-semibold time">{room.hotelName}</h2>
-                                <p className="text-sm text-zinc-400 time">{room.location}</p>
-                                <div className="w-full h-[1px] bg-slate-200"></div>
-                                <span className="flex justify-between items-center gap-14">
-                                    <h3 className="text-xl text-slate-400">exclusive price</h3>
-                                    <p className="text-3xl time font-semibold">{room.price} $</p>
-                                </span>
-                                <div className="w-full h-[1px] bg-slate-200"></div>
-                                <p className="text-slate-400 time mt-2">{room.description && room.description.length > 200 ? room.description.slice(0, 100) + "..." : room.description}</p>
-                                <div className="card-actions justify-start">
-                                  <Link to={`/rooms/${room._id}`}>  <button className="w-20 h-9 time text-white font-bold bg-cyan-400 rounded-full hover:bg-teal-400 hover:rounded-md">Details</button></Link>
-                                </div>
+
+            </div>
+            <div className="grid grid-cols-4 max-w-6xl gap-12 py-10 mx-auto  bg-white">
+                {filteredRooms.map((room, idx) => (
+                    <div className="card card-compact w-72 h-96 bg-base-100 shadow-xl rounded-md" key={idx}>
+                        <figure><img src={room.imageUrl} alt="Shoes" /></figure>
+                        <div className="card-body">
+                            <h2 className="text-xl font-semibold time">{room.hotelName}</h2>
+                            <p className="text-sm text-zinc-400 time">{room.location}</p>
+                            <div className="w-full h-[1px] bg-slate-200"></div>
+                            <span className="flex justify-between items-center gap-14">
+                                <h3 className="text-xl text-slate-400">exclusive price</h3>
+                                <p className="text-3xl time font-semibold">{room.price} $</p>
+                            </span>
+                            <div className="w-full h-[1px] bg-slate-200"></div>
+                            <p className="text-slate-400 time mt-2">{room.description && room.description.length > 200 ? room.description.slice(0, 100) + "..." : room.description}</p>
+                            <div className="card-actions justify-start">
+                                <Link to={`/rooms/${room._id}`}>  <button className="w-20 h-9 time text-white font-bold bg-cyan-400 rounded-full hover:bg-teal-400 hover:rounded-md">Details</button></Link>
                             </div>
                         </div>
-                    ))}
-                </div>
+                    </div>
+                ))}
             </div>
-            );
+        </div>
+    );
 };
 
-            export default Rooms;
+export default Rooms;

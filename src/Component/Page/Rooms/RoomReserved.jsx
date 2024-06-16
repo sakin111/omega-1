@@ -26,8 +26,8 @@ const RoomReserved = ({ room }) => {
   
   if (!to || isNaN(to.getTime()) || !from || isNaN(from.getTime())) {
     console.error('Invalid date values in room object');
-    console.log('Room object:', room); // Log the room object for further inspection
-    return null; // Return or render an error message
+    console.log('Room object:', room); 
+    return null; 
   }
   
   const totalDays = parseInt(formatDistance(to, from).split(' ')[0]);

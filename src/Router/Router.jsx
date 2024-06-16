@@ -17,6 +17,8 @@ import {
 import AdminRoute from './AdminRoute';
 import ErrorPage from '../Component/Shared/ErrorPage/ErrorPage';
 import RoomDetailsAll from '../Component/Page/Rooms/RoomDetailsAll';
+import Profile from '../Component/Shared/Profile/Profile';
+
 
 
 
@@ -60,6 +62,11 @@ const router = createBrowserRouter([
                 element: <RoomDetailsAll></RoomDetailsAll>,
                 loader:({params}) => fetch(`http://localhost:5000/rooms/${params.id}`)
             },
+          
+            {
+                path: "/profile/:id",
+                element: <Profile />,
+              }
 
         ]
     },
