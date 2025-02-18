@@ -14,7 +14,7 @@ const Banner = () => {
                 <div className="absolute inset-0 left-0 w-1/2 bg-gradient-to-r from-slate-800 via-transparent"   style={{ borderRadius: "20px" }}></div>
 
                
-                <div className="hero-content text-center text-neutral-content">
+                <div className="  hero-content text-center text-neutral-content">
                     <div className="w-full">
                         <BannerWrite></BannerWrite>
                     </div>

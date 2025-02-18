@@ -46,7 +46,7 @@ const Rooms = () => {
         setFilteredRooms(rooms);
     }, [rooms]);
 
-    // this for filter the card 
+    // this is for filtering the card 
 
     const filterRoomsByCategory = (category) => {
 
@@ -58,7 +58,7 @@ const Rooms = () => {
         }
     };
 
-    // this for search the card 
+    // this is for searching the card 
 
     const handleSearch = async (e) => {
         setSearchTerm(e.target.value);

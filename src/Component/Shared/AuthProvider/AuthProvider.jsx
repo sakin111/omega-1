@@ -1,8 +1,10 @@
 import { createContext, useState, useEffect } from "react";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import PropTypes from 'prop-types';
-import auth from "../../../FIrebase/firebase.config";
+
 import useAxiosPublic from "../../../Hook/useAxiosPublic";
+import auth from "../../../Firebase/Firebase.config";
+
 
 
 
