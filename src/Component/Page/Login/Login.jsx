@@ -6,7 +6,8 @@ import useAuth from "../../../Hook/useAuth"
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { FaGoogle } from "react-icons/fa";
 import useAxiosPublic from "../../../Hook/useAxiosPublic";
-import auth from "../../../FIrebase/firebase.config";
+import auth from "../../../Firebase/Firebase.config";
+
 
 
 
