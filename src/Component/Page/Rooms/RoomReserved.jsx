@@ -9,6 +9,23 @@ import { formatDistance } from 'date-fns'
 
 const RoomReserved = ({ room }) => {
 
+
+  const [bookingInfo, setBookingInfo] = useState({
+    guest: {
+      name: user?.displayName,
+      email: user?.email,
+      image: user?.photoURL,
+    },
+    host: room?.host?.email,
+    location: room?.location,
+    // price: totalPrice,
+    to: value.endDate,
+    from: value.startDate,
+    title: room?.title,
+    roomId: room?._id,
+    image: room?.image,
+  })  
+
   let [isOpen, setIsOpen] = useState(false)
   const { user } = useAuth()
 
@@ -42,21 +59,7 @@ const RoomReserved = ({ room }) => {
       key: 'selection',
     })
   }
-  const [bookingInfo, setBookingInfo] = useState({
-    guest: {
-      name: user?.displayName,
-      email: user?.email,
-      image: user?.photoURL,
-    },
-    host: room?.host?.email,
-    location: room?.location,
-    // price: totalPrice,
-    to: value.endDate,
-    from: value.startDate,
-    title: room?.title,
-    roomId: room?._id,
-    image: room?.image,
-  })
+
 
   console.log(value)
 
