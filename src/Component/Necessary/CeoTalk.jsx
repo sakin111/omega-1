@@ -22,7 +22,7 @@ const CeoTalk = () => {
                     Thank you for choosing Motela. We look forward to exceeding your expectations and creating unforgettable memories together.
                     Warm regards, <br /> <br />
                     [Alex Hails] <br />
-                    CEO  of Motela.
+                    CEO  of MOTELA.
                 </div>
         </div>
     );
