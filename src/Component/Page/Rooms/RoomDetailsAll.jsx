@@ -2,7 +2,8 @@
 import { useLoaderData } from 'react-router-dom'
 // import Header from '../../components/RoomDetails/Header'
 import RoomsDetails from './RoomsDetails'
-import RoomReserved from './roomReserved'
+import RoomReserved from './RoomReserved'
+
 
 const RoomDetailsAll = () => {
   const room = useLoaderData()
