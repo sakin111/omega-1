@@ -47,7 +47,7 @@ const router = createBrowserRouter([
             {
                 path: "/slider/:id",
                 element: <SliderDetails></SliderDetails>,
-                loader: ({ params }) => fetch(`https://new-project-server-git-main-maliksakin53gmailcoms-projects.vercel.app/${params.id}`)
+                loader: ({ params }) => fetch(`https://omega-2-git-main-maliksakin53gmailcoms-projects.vercel.app/${params.id}`)
             },
             {
                 path: "/booking",
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
             {
                 path: "/rooms/:id",
                 element: <RoomDetailsAll></RoomDetailsAll>,
-                loader:({params}) => fetch(`https://new-project-server-git-main-maliksakin53gmailcoms-projects.vercel.app/rooms/${params.id}`)
+                loader:({params}) => fetch(`https://omega-2-git-main-maliksakin53gmailcoms-projects.vercel.app/rooms/${params.id}`)
             },
           
             {
